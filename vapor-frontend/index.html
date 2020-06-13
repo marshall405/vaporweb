@@ -12,6 +12,7 @@
     <link href="assets/styles/canvas.css" rel="stylesheet">
     <script src="src/index.js" defer></script>
     <script src="src/canvas.js" defer></script>
+    <script src="src/posts.js" defer></script>
 </head>
 
 <body>
@@ -45,7 +46,9 @@
         <h2 class='posts-header'>🔥 Vapor Posts 🔥</h2>
     </header>
     <form id="addPost">
-        <textarea class='post-text' placeholder="lit post"></textarea>
+        <textarea id="content" class='post-text' placeholder="lit post"></textarea>
+        <br>
+        <input type="text" id="name" placeholder="name">
         <br>
         <input type="submit">
     </form>

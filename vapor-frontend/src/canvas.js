@@ -4,12 +4,6 @@ const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
 
 
-// temp settings ????????????????????
-ctx.fillStyle = `rgb(${(Math.random() * 255)},105,180)`;
-ctx.fillRect(0, 0, canvas.width, canvas.height)
-// temp settings ????????????????????
-
-
 
 const square = {
     x: 0,
@@ -17,8 +11,7 @@ const square = {
     w: 30,
     h: 30,
     draw: function () {
-        // ctx.fillRect(this.x, this.y, this.w, this.h)
-        ctx.clearRect(this.x, this.y, this.w, this.h)
+        ctx.fillRect(this.x, this.y, this.w, this.h)
     }
 }
 
