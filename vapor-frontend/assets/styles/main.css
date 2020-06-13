@@ -1,10 +1,35 @@
 html {
-    /* cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto; */
+    cursor: url(""), auto;
+}
+
+#page-head {
+    color: greenyellow;
+    padding: 10px;
+    background-color: indigo;
+    border: 10px ridge hotpink;
+}
+
+#posts-header {
+    color: greenyellow;
+    padding: 10px;
+    background-color: indigo;
+    border: 10px ridge hotpink;
+}
+
+#post-text {
+    background-color: skyblue;
+    border: 8px ridge purple;
+}
+
+input {
+    color: greenyellow;
+    background-color: indigo;
+    border: 5px ridge purple;
 }
 
 body {
     background-color: #6e2586;
-    background: url('https://f4.bcbits.com/img/0017910051_0') no-repeat center center fixed;
+    background: url('https://i.pinimg.com/originals/08/9a/da/089ada08074a01c6ff09c629d25843c2.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
