@@ -1,0 +1,10 @@
+.canvas-container {
+    text-align: center;
+}
+
+canvas {
+    border: 2px solid black;
+    background: rgba(0, 217, 255, .6);
+
+    background-image:url("https://www.festivalclaca.cat/imgfv/b/18-182681_jessicamaccormackrmack-transparent-background-smoke-fire-png.png");
+}

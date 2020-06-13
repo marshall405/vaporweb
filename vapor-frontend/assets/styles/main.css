@@ -1,0 +1,26 @@
+html {
+    /* cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto; */
+}
+
+body {
+    background-color: #6e2586;
+    background: url('https://f4.bcbits.com/img/0017910051_0') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: w;
+    padding: 10px;
+}
+
+ul {
+    list-style: none;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    
+    justify-content: space-between;
+}

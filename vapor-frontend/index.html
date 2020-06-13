@@ -6,10 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>VaporWeb '98</title>
+
+    <link href="assets/styles/main.css" rel="stylesheet">
+    <link href="assets/styles/login-form.css" rel="stylesheet">
+    <link href="assets/styles/canvas.css" rel="stylesheet">
+    <script src="src/index.js" defer></script>
+    <script src="src/canvas.js" defer></script>
 </head>
 
 <body>
-    <h1> VaporWeb </h1>
+    <header>
+        <h1> VaporWeb '98 🕶 ⽕ 👾</h1>
+        <nav>
+            <ul>
+
+            </ul>
+        </nav>
+        <input type="button" id="login" value="login">
+    </header>
+
+
+
+
+    <form id="login-form" class="form">
+        <input type="text" placeholder="username" name="username">
+        <input type="submit">
+        <input type="button" value="Cancel" id="cancel">
+    </form>
+
+    <div class="canvas-container">
+        <canvas width=500 height=500></canvas>
+        <br>
+        <input type="button" value="clear canvas" id="clearCanvas">
+        <input id="slider" type="range" min="1" max="50" value="1">
+    </div>
+
+
+    <h2>🔥 Vapor Posts 🔥</h2>
+    <form id="addPost">
+        <textarea placeholder="lit post"></textarea>
+        <input type="submit">
+    </form>
+    <div id="forum">
+
+    </div>
 </body>
 
 </html>
