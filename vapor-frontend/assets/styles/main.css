@@ -24,6 +24,13 @@ html {
     border: 8px ridge purple;
 }
 
+h2 {
+    color: greenyellow;
+    padding: 10px;
+    background-color: indigo;
+    border: 10px ridge hotpink;
+}
+
 input {
     color: greenyellow;
     background-color: indigo;
