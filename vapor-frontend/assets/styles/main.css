@@ -24,7 +24,7 @@ html {
 input {
     color: greenyellow;
     background-color: indigo;
-    border: 5px ridge purple;
+    border: 5px outset purple;
 }
 
 body {
