@@ -16,7 +16,11 @@ function renderPosts() {
 
 function renderPost(post) {
     const postDiv = document.createElement('div')
-    postDiv.classList.add()
+    const postP = document.createElement('p')
+    postP.innerText = post.content
+    postDiv.appendChild(postP)
+    forum.appendChild(postDiv)
+    postDiv.classList.add('post-container')
 }
 
 

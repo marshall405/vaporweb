@@ -1,0 +1,24 @@
+.post-container {
+    border: 10px ridge purple;
+    padding: 10px;
+    color: indigo;
+    background-color: RGBA(31, 209, 219, 0.8);
+    box-shadow: 1px 1px 10px 5px violet;
+}
+
+.post-text {
+    width: 80%;
+    max-width: 450px;
+    height: 150px;
+    color: indigo;
+    background-color: RGBA(31, 209, 219, 0.8);
+    border: 8px ridge purple;
+}
+
+.post-text::placeholder {
+    color: indigo;
+}
+
+#post-submit {
+    margin-bottom: 10px;
+}

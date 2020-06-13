@@ -18,18 +18,23 @@ const square = {
 window.addEventListener('keydown', (e) => {
     switch (e.key) {
         case ("ArrowRight"):
+            e.preventDefault();
             square.x += 5;
             break;
         case "ArrowLeft":
+            e.preventDefault();
             square.x -= 5;
             break;
         case "ArrowUp":
+            e.preventDefault();
             square.y -= 5;
             break;
         case "ArrowDown":
+            e.preventDefault();
             square.y += 5;
             break;
         case " ":
+            e.preventDefault();
             square.w = (Math.random() * 150) + 10;
             square.h = (Math.random() * 150) + 10;
         default:

@@ -16,12 +16,8 @@ html {
     border: 10px ridge hotpink;
 }
 
-.post-text {
-    width: 80%;
-    max-width: 450px;
-    height: 150px;
-    background-color: skyblue;
-    border: 8px ridge purple;
+h1 {
+    box-shadow: 1px 1px 20px 10px indigo;
 }
 
 h2 {
@@ -29,12 +25,14 @@ h2 {
     padding: 10px;
     background-color: indigo;
     border: 10px ridge hotpink;
+    box-shadow: 1px 1px 10px 5px indigo;
 }
 
-input {
+input:not([type='range']) {
     color: greenyellow;
     background-color: indigo;
     border: 5px outset purple;
+    box-shadow: 1px 1px 10px 5px violet;
 }
 
 body {
@@ -56,6 +54,5 @@ ul {
 header {
     display: flex;
     align-items: center;
-    
     justify-content: space-between;
 }
