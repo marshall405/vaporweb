@@ -3,13 +3,22 @@
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
 
+
+// temp settings ????????????????????
+ctx.fillStyle = `rgb(${(Math.random() * 255)},105,180)`;
+ctx.fillRect(0, 0, canvas.width, canvas.height)
+// temp settings ????????????????????
+
+
+
 const square = {
     x: 0,
     y: 0,
-    w: 10,
-    h: 10,
+    w: 30,
+    h: 30,
     draw: function () {
-        ctx.fillRect(this.x, this.y, this.w, this.h)
+        // ctx.fillRect(this.x, this.y, this.w, this.h)
+        ctx.clearRect(this.x, this.y, this.w, this.h)
     }
 }
 
@@ -38,17 +47,20 @@ window.addEventListener('keydown', (e) => {
 let count = 0;
 let frequency = 1;
 function drawSquare() {
-    if (count == frequency) {
-        ctx.fillStyle = `rgb(${(Math.random() * 255)},105,180)`
-        count = 0;
-    }
-    count++;
+    colorChange()
     square.draw()
     requestAnimationFrame(drawSquare)
 }
 
 document.getElementById('clearCanvas').addEventListener('click', clearCanvas)
 
+function colorChange() {
+    if (count == frequency) {
+        ctx.fillStyle = `rgb(${(Math.random() * 255)},105,180)`
+        count = 0;
+    }
+    count++;
+}
 function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
@@ -59,7 +71,6 @@ canvas.addEventListener('click', e => {
 })
 
 slider.addEventListener('change', e => {
-
     frequency = parseInt(e.target.value);
     count = 0;
 })
