@@ -9,12 +9,18 @@ html {
 
 
 .page-head {
+    transform: translateX(418px);
     font-family: 'Press Start 2P', cursive;
     color: greenyellow;
     padding: 10px;
     background: rgb(49,0,65);
     background: radial-gradient(circle, rgba(49,0,65,1) 5%, rgba(75,9,121,1) 40%, rgba(255,0,249,0.7147233893557423) 85%);
     border: 10px ridge hotpink;
+}
+
+.page-head:hover {
+    text-transform: uppercase;
+    transform: translateX(-416px);
 }
 
 .posts-header {
@@ -48,16 +54,18 @@ input:not([type='range']) {
     box-shadow: 1px 1px 10px 5px violet;
 }
 
-input:hover {background-color: violet}
+input:hover {
+    background-color: violet;
+}
 
 input:active:not([type='range']) {
   border: 6px inset purple;
-  transform: translateY(4px);
+  transform: translateY(2px);
 }
 
 body {
-    background-color: #6e2586;
     background: url('https://i.pinimg.com/originals/08/9a/da/089ada08074a01c6ff09c629d25843c2.jpg') no-repeat center center fixed;
+    background-color: #ca36f2;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
