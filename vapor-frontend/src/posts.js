@@ -1,16 +1,23 @@
 const postsURL = "http://localhost:3000/posts"
 const forum = document.getElementById('forum')
 
+// max characters for a new post 
+const maxChars = 250;
+
 let posts;
 
-fetch(postsURL)
-    .then(res => res.json())
-    .then(json => {
-        posts = json
-        renderPosts()
-    })
+function fetchPosts() {
+    fetch(postsURL)
+        .then(res => res.json())
+        .then(json => {
+            posts = json
+            renderPosts()
+        })
+}
+
 
 function renderPosts() {
+    forum.innerHTML = ""
     posts.forEach(post => renderPost(post))
 }
 
@@ -19,20 +26,15 @@ function renderPost(post) {
     const postP = document.createElement('p')
     postP.innerText = post.content
     postDiv.appendChild(postP)
-    forum.appendChild(postDiv)
+    forum.prepend(postDiv)
     postDiv.classList.add('post-container')
-    console.log(post);
 }
 
 
-// document.getElementById('addPost', addNewPost)
+document.getElementById('content').addEventListener('keyup', handleChange)
 
-function addNewPost(e) {
-    e.preventDefault()
-    console.log(e.target.content, e.target.name)
-    fetch("http://localhost:3000/posts")
-        .then(res => res.json())
-        .then(json => console.log(json))
+function handleChange(e) {
+    chars.innerText = `${maxChars - e.target.value.length} characters remaining`
 }
 
 
@@ -44,4 +46,29 @@ document.getElementById('addPost').addEventListener('submit', (e) => {
     text.value = '';
 });
 
+function addNewPost(e) {
+    e.preventDefault()
 
+    const content = e.target.content.value.trim();
+    renderPost({ content })
+    if (content.match(/[a-zA-Z0-9]/) && content.length > 0) {
+        fetch(postsURL, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                user_id: parseInt(window.sessionStorage.getItem("user_id")),
+                content
+            })
+        })
+            .then(res => res.json())
+            .then(json => posts.push(json))
+    }
+}
+
+
+
+
+fetchPosts();

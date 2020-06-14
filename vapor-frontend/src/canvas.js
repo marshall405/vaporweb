@@ -34,7 +34,7 @@ window.addEventListener('keydown', (e) => {
             square.y += 5;
             break;
         case " ":
-            e.preventDefault();
+            // e.preventDefault();
             square.w = (Math.random() * 150) + 10;
             square.h = (Math.random() * 150) + 10;
         default:

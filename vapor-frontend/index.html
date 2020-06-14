@@ -49,11 +49,12 @@
     <header>
         <h2 class='posts-header'>🔥 Vapor Posts 🔥</h2>
     </header>
-    <form id="addPost">
-        <textarea id="content" class='post-text' placeholder="lit post"></textarea>
+    <form id="addPost" class="new-post-container">
+        <textarea id="content" class='post-text' placeholder="lit post" maxlength="250"></textarea>
+
+        <p id="chars" class="show-chars">250 characters remaining</p>
         <br>
-        <br>
-        <input id='post-submit' type="submit">
+        <input id='post-submit' type="submit" disabled>
     </form>
     <div id="forum">
 

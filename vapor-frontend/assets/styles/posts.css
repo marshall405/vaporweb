@@ -8,11 +8,12 @@
 
 .post-text {
     width: 80%;
-    max-width: 450px;
-    height: 150px;
+    width: 450px;
+    height: 104px;
     color: indigo;
     background-color: RGBA(31, 209, 219, 0.8);
     border: 8px ridge purple;
+    margin-bottom: 0;
 }
 
 .post-text::placeholder {
@@ -21,4 +22,20 @@
 
 #post-submit {
     margin-bottom: 10px;
+}
+
+.new-post-container{
+    position: relative;
+}
+.show-chars {
+    display: inline-block;
+    position: absolute;
+    left: 300px;
+    bottom: 50px;
+    margin: 0;
+    padding: 0; 
+    text-align: center;
+}
+input:disabled {
+    visibility: hidden;
 }
