@@ -68,6 +68,11 @@ canvas.addEventListener('click', e => {
     square.y = e.offsetY;
 })
 
+document.getElementById('slider').oninput = function() {
+    const adjustedValue = this.value * 1.98;
+    this.style.background = 'linear-gradient(to right, indigo 0%, purple ' + adjustedValue  + '%, violet ' + this.value + '%, skyblue 100%)'
+  };
+
 slider.addEventListener('change', e => {
     frequency = parseInt(e.target.value);
     count = 0;

@@ -52,6 +52,8 @@ input:not([type='range']) {
     background-color: indigo;
     border: 5px outset purple;
     box-shadow: 1px 1px 10px 5px violet;
+    outline: none;
+    -webkit-appearance: none;
 }
 
 input:hover {
@@ -61,6 +63,8 @@ input:hover {
 input:active:not([type='range']) {
   border: 6px inset purple;
   transform: translateY(2px);
+  outline: none;
+  -webkit-appearance: none;
 }
 
 body {
