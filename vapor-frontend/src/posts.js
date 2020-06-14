@@ -21,10 +21,11 @@ function renderPost(post) {
     postDiv.appendChild(postP)
     forum.appendChild(postDiv)
     postDiv.classList.add('post-container')
+    console.log(post);
 }
 
 
-document.getElementById('addPost', addNewPost)
+// document.getElementById('addPost', addNewPost)
 
 function addNewPost(e) {
     e.preventDefault()
@@ -33,3 +34,14 @@ function addNewPost(e) {
         .then(res => res.json())
         .then(json => console.log(json))
 }
+
+
+document.getElementById('addPost').addEventListener('submit', (e) => {
+    const text = document.getElementById('content');
+    e.preventDefault()
+    console.log(text.value);
+    addNewPost(e);
+    text.value = '';
+});
+
+
