@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :images
   # resources :users
   post 'users', to: 'users#user'
   post 'users/new', to: 'users#create'

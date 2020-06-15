@@ -9,3 +9,8 @@
 user = User.create(username: "Rocky")
 
 post = Post.create(content: "First Post for VaporWeb '98", user_id: user.id)
+
+
+Image.create(name: "cameron", url: "http://localhost:3001/assets/images/cam.jpg")
+Image.create(name: "marshall", url: "http://localhost:3001/assets/images/mar.jpg")
+Image.create(name: "matcha", url: "http://localhost:3001/assets/images/matcha.jpg")
