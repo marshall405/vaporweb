@@ -5,6 +5,9 @@
     background-color: RGBA(31, 209, 219, 0.8);
     box-shadow: 1px 1px 10px 5px violet;
     margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .post-text {
@@ -46,4 +49,13 @@
 
 input:disabled {
     visibility: hidden;
+}
+
+.post-user{
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}
+.post-user .like-button {
+    margin-left: 15px;
 }

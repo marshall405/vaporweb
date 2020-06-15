@@ -24,19 +24,27 @@ function renderPosts() {
 function renderPost(post) {
     const postDiv = document.createElement('div');
     const postP = document.createElement('p');
+
+    const likeDiv = document.createElement('div')
     const like = document.createElement('button');
+    likeDiv.appendChild(like)
+    like.innerText = post.votes
+    like.classList.add('like-button');
 
-    like.class = 'like-button';
+    like.addEventListener('click', e => {
+        post.votes += 1
+        like.innerText = post.votes
+    })
 
-    postP.innerText = `${post.content}`;
     if (post.user) {
-        postP.innerText += ` \n ${post.user.username}`
+        postP.innerText = `${post.user.username}`
     } else {
-        postP.innerText += `\n ${sessionStorage.getItem("username")}`
+        postP.innerText = `${sessionStorage.getItem("username")}`
     }
-    postP.appendChild(like);
+    postP.innerText += `: "${post.content}"`;
 
     postDiv.appendChild(postP)
+    postDiv.appendChild(likeDiv)
     forum.prepend(postDiv)
     postDiv.classList.add('post-container')
 }
