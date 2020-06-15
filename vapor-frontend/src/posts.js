@@ -28,7 +28,7 @@ function renderPost(post) {
 
     like.class = 'like-button';
 
-    postP.innerText = post.content;
+    postP.innerText = `${post.content} \n-${post.user.username}`;
     postP.appendChild(like);
 
     postDiv.appendChild(postP)
