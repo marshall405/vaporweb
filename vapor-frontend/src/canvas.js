@@ -15,37 +15,36 @@ const square = {
     }
 }
 canvas.addEventListener("focus", addKeydownEvent)
-canvas.addEventListener('blur', () => canvas.removeEventListener(keydownEvent))
+canvas.addEventListener('blur', () => canvas.removeEventListener("keydown", keydownEvent))
 function addKeydownEvent() {
     canvas.addEventListener('keydown', keydownEvent)
-    function keydownEvent(e) {
-        switch (e.key) {
-            case ("ArrowRight"):
-                e.preventDefault();
-                square.x += 5;
-                break;
-            case "ArrowLeft":
-                e.preventDefault();
-                square.x -= 5;
-                break;
-            case "ArrowUp":
-                e.preventDefault();
-                square.y -= 5;
-                break;
-            case "ArrowDown":
-                e.preventDefault();
-                square.y += 5;
-                break;
-            case " ":
-                e.preventDefault();
-                square.w = (Math.random() * 150) + 10;
-                square.h = (Math.random() * 150) + 10;
-            default:
-                break;
-        }
+}
+function keydownEvent(e) {
+    switch (e.key) {
+        case ("ArrowRight"):
+            e.preventDefault();
+            square.x += 5;
+            break;
+        case "ArrowLeft":
+            e.preventDefault();
+            square.x -= 5;
+            break;
+        case "ArrowUp":
+            e.preventDefault();
+            square.y -= 5;
+            break;
+        case "ArrowDown":
+            e.preventDefault();
+            square.y += 5;
+            break;
+        case " ":
+            e.preventDefault();
+            square.w = (Math.random() * 150) + 10;
+            square.h = (Math.random() * 150) + 10;
+        default:
+            break;
     }
 }
-
 let count = 0;
 let frequency = 1;
 function drawSquare() {
