@@ -1,6 +1,9 @@
 html {
     cursor: wait;
 }
+::-webkit-scrollbar {
+    display: none;
+}
 
 * {
     font-family: 'VT323', monospace;
@@ -9,7 +12,7 @@ html {
 
 
 .page-head {
-    transform: translateX(418px);
+    text-align: center;
     font-family: 'Press Start 2P', cursive;
     color: greenyellow;
     padding: 10px;
@@ -44,7 +47,6 @@ h2 {
     border: 10px ridge hotpink;
     box-shadow: 1px 1px 10px 5px indigo;
 }
-
 
 
 input:not([type='range']) {
@@ -84,7 +86,8 @@ ul {
 
 
 header {
-    /* display: flex; */
+    display: flex;
+    max-width: fit-content;
     align-items: center;
     justify-content: space-between;
 }

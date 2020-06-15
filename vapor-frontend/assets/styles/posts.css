@@ -4,6 +4,7 @@
     color: indigo;
     background-color: RGBA(31, 209, 219, 0.8);
     box-shadow: 1px 1px 10px 5px violet;
+    margin-bottom: 5px;
 }
 
 .post-text {
@@ -13,7 +14,8 @@
     color: indigo;
     background-color: RGBA(31, 209, 219, 0.8);
     border: 8px ridge purple;
-    margin-bottom: 0;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 10px 5px violet;
 }
 
 .post-text::placeholder {
@@ -21,7 +23,7 @@
 }
 
 #post-submit {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .new-post-container{
