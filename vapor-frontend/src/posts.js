@@ -2,8 +2,8 @@ const postsURL = "http://localhost:3000/posts"
 const forum = document.getElementById('forum')
 
 // max characters for a new post 
-const maxChars = 250;
-
+const maxChars = parseInt(content.getAttribute('maxlength'));
+chars.innerText = `${maxChars} characters remaining`
 let posts;
 
 function fetchPosts() {
