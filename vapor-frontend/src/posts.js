@@ -2,8 +2,8 @@ const postsURL = "http://localhost:3000/posts"
 const forum = document.getElementById('forum')
 
 // max characters for a new post 
-const maxChars = 250;
-
+const maxChars = parseInt(content.getAttribute('maxlength'));
+chars.innerText = `${maxChars} characters remaining`
 let posts;
 
 function fetchPosts() {
@@ -22,9 +22,15 @@ function renderPosts() {
 }
 
 function renderPost(post) {
-    const postDiv = document.createElement('div')
-    const postP = document.createElement('p')
-    postP.innerText = post.content
+    const postDiv = document.createElement('div');
+    const postP = document.createElement('p');
+    const like = document.createElement('button');
+
+    like.class = 'like-button';
+
+    postP.innerText = post.content;
+    postP.appendChild(like);
+
     postDiv.appendChild(postP)
     forum.prepend(postDiv)
     postDiv.classList.add('post-container')

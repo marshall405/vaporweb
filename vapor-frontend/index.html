@@ -40,7 +40,7 @@
     </form>
 
     <div class="canvas-container">
-        <canvas width=500 height=500></canvas>
+        <canvas width=500 height=500 tabindex="1"></canvas>
         <br>
         <div id="canvasContols">
             <input type="button" value="clear canvas" id="clearCanvas">
@@ -54,9 +54,9 @@
     <form id="addPost" class="new-post-container">
         <textarea id="content" class='post-text' placeholder="lit post" maxlength="250"></textarea>
 
-        <p id="chars" class="show-chars">250 characters remaining</p>
+        <p id="chars" class="show-chars">characters remaining</p>
         <br>
-        <input id='post-submit' type="submit">
+        <input id='post-submit' type="submit" disabled>
     </form>
     <div id="forum">
 

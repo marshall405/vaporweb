@@ -22,6 +22,10 @@
     color: indigo;
 }
 
+.like-button {
+    display: ;
+}
+
 #post-submit {
     margin-bottom: 30px;
 }
@@ -38,6 +42,7 @@
     padding: 0; 
     text-align: center;
 }
+
 input:disabled {
     visibility: hidden;
 }

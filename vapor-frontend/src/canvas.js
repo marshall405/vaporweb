@@ -14,8 +14,12 @@ const square = {
         ctx.fillRect(this.x, this.y, this.w, this.h)
     }
 }
-
-window.addEventListener('keydown', (e) => {
+canvas.addEventListener("focus", addKeydownEvent)
+canvas.addEventListener('blur', () => canvas.removeEventListener("keydown", keydownEvent))
+function addKeydownEvent() {
+    canvas.addEventListener('keydown', keydownEvent)
+}
+function keydownEvent(e) {
     switch (e.key) {
         case ("ArrowRight"):
             e.preventDefault();
@@ -34,14 +38,13 @@ window.addEventListener('keydown', (e) => {
             square.y += 5;
             break;
         case " ":
-            // e.preventDefault();
+            e.preventDefault();
             square.w = (Math.random() * 150) + 10;
             square.h = (Math.random() * 150) + 10;
         default:
             break;
     }
-})
-
+}
 let count = 0;
 let frequency = 1;
 function drawSquare() {
@@ -68,10 +71,10 @@ canvas.addEventListener('click', e => {
     square.y = e.offsetY;
 })
 
-document.getElementById('slider').oninput = function() {
+document.getElementById('slider').oninput = function () {
     const adjustedValue = this.value * 1.98;
-    this.style.background = 'linear-gradient(to right, indigo 0%, purple ' + adjustedValue  + '%, violet ' + this.value + '%, skyblue 100%)'
-  };
+    this.style.background = 'linear-gradient(to right, indigo 0%, purple ' + adjustedValue + '%, violet ' + this.value + '%, skyblue 100%)'
+};
 
 slider.addEventListener('change', e => {
     frequency = parseInt(e.target.value);

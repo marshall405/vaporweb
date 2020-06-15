@@ -1,26 +1,35 @@
 const userURL = 'http://localhost:3000/users';
+const loginForm = document.getElementById('login-form');
 
 let user_id;
+
 if (sessionStorage.getItem('username')) {
     fetchUser(sessionStorage.getItem('username'))
 }
+
+
 //  LOGIN 
 const login = document.getElementById('login');
 login.addEventListener('click', showLoginForm);
 
 function showLoginForm(e) {
-    document.getElementById('login-form').style.display = "flex"
+    loginForm.style.display = "flex"
 }
 
-document.getElementById('cancel').addEventListener('click', () => document.getElementById('login-form').style.display = 'none')
+document.getElementById('cancel').addEventListener('click', () => loginForm.style.display = 'none')
 
-document.getElementById('login-form').addEventListener('submit', handleLogin);
+loginForm.addEventListener('submit', handleLogin);
 
 function handleLogin(e) {
     e.preventDefault()
     fetchUser(e.target.username.value)
+
+    loginForm.style.display = 'none';
+
     e.target.username.value = "";
 }
+
+
 function fetchUser(username) {
     fetch(userURL, {
         method: 'POST',
@@ -35,6 +44,7 @@ function fetchUser(username) {
             if (!json.message) {
                 sessionStorage.setItem('user_id', json.id)
                 sessionStorage.setItem('username', json.username)
+                login.style.display = 'none';
                 welcomeUser(json)
             } else {
                 alert(json.message)
@@ -42,28 +52,34 @@ function fetchUser(username) {
         });
 }
 
+const logoutButton = document.createElement("button");
+
 function welcomeUser(user) {
     const h2 = document.createElement('h2');
-    const logout = document.createElement('input');
-
-    logout.type = 'button';
-    logout.id = 'logout';
-    logout.value = 'logout';
-
-    h2.id = 'loginMessage';
+    h2.id = "welcome";
     h2.innerText = `Welcome to the future past,\n ${user.username}.`;
 
-    document.querySelector('header').appendChild(h2);
-    document.querySelector('header').appendChild(logout);
-    login.style.display = 'none';
-    document.getElementById('login-form').style.display = "none";
-    document.getElementById('post-submit').disabled = false;
+    
+    logoutButton.innerText = 'logout';
+    logoutButton.addEventListener('click', handleLogout);
 
-    document.getElementById('logout').addEventListener('click', () => {
-        document.getElementById('loginMessage').style.display = 'none';
-        document.getElementById('logout').style.display = 'none';
-        login.style.display = 'initial';
-    })
+    
+    document.querySelector('header').appendChild(h2);
+    
+    document.querySelector('header').appendChild(logoutButton);
+
+    loginForm.style.display = "none";
+    document.getElementById('post-submit').disabled = false;
+}
+
+
+function handleLogout(e) {
+    document.querySelector('header').removeChild(welcome);
+    document.querySelector('header').removeChild(logoutButton);
+    sessionStorage.removeItem('user_id')
+    sessionStorage.removeItem('username')
+    document.getElementById('post-submit').disabled = true;
+    login.style.display = 'initial';
 }
 // END OF LOGIN
 

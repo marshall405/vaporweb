@@ -9,7 +9,7 @@ html {
     font-family: 'VT323', monospace;
 }
 
-#loginMessage {
+#welcome {
     max-width: fit-content;
     text-align: center;
     background: rgb(49,0,65);
@@ -55,7 +55,7 @@ h2 {
 }
 
 
-input:not([type='range']) {
+input:not([type='range']), button {
     color: greenyellow;
     background-color: indigo;
     border: 5px outset purple;
@@ -64,7 +64,7 @@ input:not([type='range']) {
     -webkit-appearance: none;
 }
 
-input:hover {
+input:hover, button:hover {
     background-color: violet;
 }
 
