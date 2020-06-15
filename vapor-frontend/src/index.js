@@ -44,11 +44,26 @@ function fetchUser(username) {
 
 function welcomeUser(user) {
     const h2 = document.createElement('h2');
+    const logout = document.createElement('input');
+
+    logout.type = 'button';
+    logout.id = 'logout';
+    logout.value = 'logout';
+
+    h2.id = 'loginMessage';
     h2.innerText = `Welcome to the future past,\n ${user.username}.`;
+
     document.querySelector('header').appendChild(h2);
+    document.querySelector('header').appendChild(logout);
     login.style.display = 'none';
     document.getElementById('login-form').style.display = "none";
     document.getElementById('post-submit').disabled = false;
+
+    document.getElementById('logout').addEventListener('click', () => {
+        document.getElementById('loginMessage').style.display = 'none';
+        document.getElementById('logout').style.display = 'none';
+        login.style.display = 'initial';
+    })
 }
 // END OF LOGIN
 

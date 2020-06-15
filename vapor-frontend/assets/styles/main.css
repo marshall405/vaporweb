@@ -9,6 +9,12 @@ html {
     font-family: 'VT323', monospace;
 }
 
+#loginMessage {
+    max-width: fit-content;
+    text-align: center;
+    background: rgb(49,0,65);
+    background: linear-gradient(180deg, rgba(49,0,65,1) 5%, rgba(75,9,121,1) 40%, rgba(144, 8, 172, 0.715) 85%);
+}
 
 
 .page-head {
@@ -63,10 +69,10 @@ input:hover {
 }
 
 input:active:not([type='range']) {
-  border: 6px inset purple;
-  transform: translateY(2px);
-  outline: none;
-  -webkit-appearance: none;
+    border: 6px inset purple;
+    transform: translateY(2px);
+    outline: none;
+    -webkit-appearance: none;
 }
 
 body {
@@ -86,7 +92,7 @@ ul {
 
 
 header {
-    display: flex;
+    display: flexbox;
     max-width: fit-content;
     align-items: center;
     justify-content: space-between;
