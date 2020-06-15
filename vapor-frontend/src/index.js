@@ -42,8 +42,6 @@ function fetchUser(username) {
         .then(response => response.json())
         .then(json => {
             if (!json.message) {
-                sessionStorage.setItem('user_id', json.id)
-                sessionStorage.setItem('username', json.username)
                 login.style.display = 'none';
                 welcomeUser(json)
             } else {
@@ -55,17 +53,19 @@ function fetchUser(username) {
 const logoutButton = document.createElement("button");
 
 function welcomeUser(user) {
+    sessionStorage.setItem('user_id', user.id)
+    sessionStorage.setItem('username', user.username)
     const h2 = document.createElement('h2');
     h2.id = "welcome";
     h2.innerText = `Welcome to the future past,\n ${user.username}.`;
 
-    
+
     logoutButton.innerText = 'logout';
     logoutButton.addEventListener('click', handleLogout);
 
-    
+
     document.querySelector('header').appendChild(h2);
-    
+
     document.querySelector('header').appendChild(logoutButton);
 
     loginForm.style.display = "none";

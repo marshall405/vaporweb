@@ -17,6 +17,7 @@
     <script src="src/index.js" defer></script>
     <script src="src/canvas.js" defer></script>
     <script src="src/posts.js" defer></script>
+    <script src="src/createUser.js" defer></script>
 </head>
 
 <body>
@@ -34,9 +35,13 @@
 
 
     <form id="login-form" class="form">
-        <input type="text" placeholder="username" name="username">
-        <input type="submit">
+        <div>
+            <input type="text" placeholder="username" name="username">
+            <input type="submit">
+            <input type="button" value="Create User" id="createUser">
+        </div>
         <input type="button" value="Cancel" id="cancel">
+
     </form>
 
     <div class="canvas-container">
