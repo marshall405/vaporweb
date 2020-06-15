@@ -2,6 +2,7 @@
     text-align: center;
 }
 
+
 canvas {
     border: 8px ridge rgb(19, 111, 153);
     background: rgba(22, 179, 207, 0.6);
@@ -19,5 +20,16 @@ canvas {
     width: 200px;
     box-shadow: 1px 1px 10px 5px violet;
     outline: none;
+    -webkit-appearance: none;
+  }
+
+  #slider::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 10px;
+    background: rgb(223,255,174);
+    background: radial-gradient(ellipse at left top, rgba(223,255,174,1) 15%, rgba(54,204,229,1) 27%, rgba(70,8,111,1) 92%);
+    box-shadow: 2px 2px 5px 2px indigo;
+    overflow: visible;
     -webkit-appearance: none;
   }

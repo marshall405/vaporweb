@@ -42,8 +42,10 @@
     <div class="canvas-container">
         <canvas width=500 height=500></canvas>
         <br>
-        <input type="button" value="clear canvas" id="clearCanvas">
-        <input id="slider" type="range" min="1" max="50" value="1">
+        <div id="canvasContols">
+            <input type="button" value="clear canvas" id="clearCanvas">
+            <input id="slider" type="range" min="1" max="50" value="1">
+        </div>
     </div>
 
     <header>
@@ -54,7 +56,7 @@
 
         <p id="chars" class="show-chars">characters remaining</p>
         <br>
-        <input id='post-submit' type="submit" disabled>
+        <input id='post-submit' type="submit">
     </form>
     <div id="forum">
 
