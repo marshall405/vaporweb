@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :images
-  # resources :users
+  
+  post 'users/:id/:image_id', to: 'users#image'
+
   post 'users', to: 'users#user'
   post 'users/new', to: 'users#create'
   resources :posts

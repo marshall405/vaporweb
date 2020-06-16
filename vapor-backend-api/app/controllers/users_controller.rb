@@ -21,4 +21,13 @@ class UsersController < ApplicationController
         end
     end
 
+    def image
+        user = User.find_by(id: params["id"])
+        user.image_id = params["image_id"]
+        user.save
+
+        render json: user, include: :image
+    end
+
+
 end
