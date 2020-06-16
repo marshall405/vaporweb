@@ -33,7 +33,7 @@ function updateUserImage(id) {
 
     const userID = sessionStorage.getItem('user_id')
     fetch(userURL + `/image`, {
-        method: "POST",
+        method: "PATCH",
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
