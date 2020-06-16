@@ -22,7 +22,8 @@ class UsersController < ApplicationController
     end
 
     def image
-        user = User.find_by(id: params["id"])
+        puts params
+        user = User.find_by(id: params["user_id"])
         user.image_id = params["image_id"]
         user.save
 

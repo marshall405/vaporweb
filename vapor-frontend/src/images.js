@@ -30,14 +30,18 @@ function renderImages(images) {
 }
 
 function updateUserImage(id) {
-    console.log(id)
+
     const userID = sessionStorage.getItem('user_id')
-    fetch(userURL + `/${userID}/${id}`, {
+    fetch(userURL + `/image`, {
         method: "POST",
-        header: {
+        headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
-        }
+        },
+        body: JSON.stringify({
+            user_id: userID,
+            image_id: id
+        })
     })
         .then(res => res.json())
         .then(json => {
