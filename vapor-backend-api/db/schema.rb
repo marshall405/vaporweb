@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_194443) do
+ActiveRecord::Schema.define(version: 2020_06_16_142818) do
 
   create_table "images", force: :cascade do |t|
     t.string "url"
@@ -32,7 +32,10 @@ ActiveRecord::Schema.define(version: 2020_06_15_194443) do
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "image_id"
+    t.index ["image_id"], name: "index_users_on_image_id"
   end
 
   add_foreign_key "posts", "users"
+  add_foreign_key "users", "images"
 end
