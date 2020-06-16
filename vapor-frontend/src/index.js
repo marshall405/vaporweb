@@ -51,22 +51,28 @@ function fetchUser(username) {
 }
 
 const logoutButton = document.createElement("button");
-
+let profileDiv;
 function welcomeUser(user) {
     sessionStorage.setItem('user_id', user.id)
     sessionStorage.setItem('username', user.username)
+    profileDiv = document.createElement('div')
+    profileDiv.classList.add('profile-container')
+
     const h2 = document.createElement('h2');
     h2.id = "welcome";
-    h2.innerText = `Welcome to the future past,\n ${user.username}.`;
+    h2.innerText = `Welcome to the future past, ${user.username}.`;
 
+    const img = document.createElement('img')
+    img.classList.add('profile-pic')
+    img.src = user.image.url
 
     logoutButton.innerText = 'logout';
     logoutButton.addEventListener('click', handleLogout);
 
-
-    document.querySelector('header').appendChild(h2);
-
-    document.querySelector('header').appendChild(logoutButton);
+    profileDiv.appendChild(img);
+    profileDiv.appendChild(h2);
+    profileDiv.appendChild(logoutButton);
+    document.querySelector('header').appendChild(profileDiv)
 
     loginForm.style.display = "none";
     document.getElementById('post-submit').disabled = false;
@@ -74,8 +80,7 @@ function welcomeUser(user) {
 
 
 function handleLogout(e) {
-    document.querySelector('header').removeChild(welcome);
-    document.querySelector('header').removeChild(logoutButton);
+    document.querySelector('header').removeChild(profileDiv);
     sessionStorage.removeItem('user_id')
     sessionStorage.removeItem('username')
     document.getElementById('post-submit').disabled = true;
