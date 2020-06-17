@@ -4,21 +4,27 @@ const forum = document.getElementById('forum')
 // max characters for a new post 
 const maxChars = parseInt(content.getAttribute('maxlength'));
 chars.innerText = `${maxChars} characters remaining`
-let posts;
+let allPosts;
 
 function fetchPosts() {
     fetch(postsURL)
         .then(res => res.json())
         .then(json => {
-            posts = json
-            renderPosts()
+            allPosts = json
+            renderPosts(allPosts)
         })
 }
 
 
-function renderPosts() {
+function renderPosts(posts) {
     forum.innerHTML = ""
-    posts.forEach(post => renderPost(post))
+    if (posts.length > 0) {
+        posts.forEach(post => renderPost(post))
+    } else {
+        forum.innerHTML = `
+            <h2 class="posts-header"> NO POSTS YET!</h2>
+        `
+    }
 }
 
 function renderPost(post) {
@@ -28,12 +34,20 @@ function renderPost(post) {
     const likeDiv = document.createElement('div')
     const like = document.createElement('button');
     likeDiv.appendChild(like)
-    like.innerText = post.votes
+    like.innerText = `${10 - post.votes} to delete`
     like.classList.add('like-button');
 
     like.addEventListener('click', e => {
         post.votes += 1
-        like.innerText = post.votes
+        like.innerText = `${10 - post.votes} to delete`
+
+        if (post.votes > 9) {
+            allPosts.splice(allPosts.indexOf(post), 1)
+            forum.removeChild(postDiv)
+        }
+        fetch(postsURL + `/${post.id}`)
+            .then(res => res.json())
+            .then(json => console.log(json))
     })
 
     if (post.user) {
@@ -60,7 +74,6 @@ function handleChange(e) {
 document.getElementById('addPost').addEventListener('submit', (e) => {
     const text = document.getElementById('content');
     e.preventDefault()
-    console.log(text.value);
     addNewPost(e);
     text.value = '';
 });
@@ -69,7 +82,7 @@ function addNewPost(e) {
     e.preventDefault()
 
     const content = e.target.content.value.trim();
-    renderPost({ content })
+    renderPost({ content, votes: 0 })
     if (content.match(/[a-zA-Z0-9]/) && content.length > 0) {
         fetch(postsURL, {
             method: "POST",
@@ -83,11 +96,19 @@ function addNewPost(e) {
             })
         })
             .then(res => res.json())
-            .then(json => posts.push(json))
+            .then(json => {
+                allPosts.push(json)
+                renderPosts(allPosts)
+            })
     }
 }
 
+// show all or show user posts
 
-
+showAllPosts.addEventListener('click', () => renderPosts(allPosts))
+showUserPosts.addEventListener('click', () => {
+    const userPosts = allPosts.filter(post => post.user_id == sessionStorage.getItem('user_id'))
+    renderPosts(userPosts)
+})
 
 fetchPosts();

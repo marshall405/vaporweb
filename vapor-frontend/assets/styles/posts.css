@@ -37,7 +37,7 @@
     display: inline-block;
     position: absolute;
     left: 300px;
-    bottom: 72px;
+    bottom: 75px;
     margin: 0;
     padding: 0; 
     text-align: center;
@@ -54,4 +54,8 @@ input:disabled {
 }
 .post-user .like-button {
     margin-left: 15px;
+}
+
+.post-show-buttons {
+    text-align: right;
 }
