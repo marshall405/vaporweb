@@ -65,6 +65,7 @@ function welcomeUser(user) {
     const img = document.createElement('img')
     img.classList.add('profile-pic')
     img.src = user.image.url
+    canvas.style.backgroundImage = `url(${user.image.url})`
     img.addEventListener('click', handleImageClick)
 
     logoutButton.innerText = 'logout';
