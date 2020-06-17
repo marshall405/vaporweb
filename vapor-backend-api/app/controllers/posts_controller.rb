@@ -20,7 +20,7 @@ class PostsController < ApplicationController
             post.save
             render json: post
         else
-            render json: {messge: 'something when wrong, try again'}
+            render json: {messge: 'something went wrong, try again'}
         end
     end
 

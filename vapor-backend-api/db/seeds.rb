@@ -6,11 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create(username: "Rocky")
 
-post = Post.create(content: "First Post for VaporWeb '98", user_id: user.id)
 
 
 Image.create(name: "cameron", url: "http://localhost:3001/assets/images/cam.jpg")
 Image.create(name: "marshall", url: "http://localhost:3001/assets/images/mar.jpg")
 Image.create(name: "matcha", url: "http://localhost:3001/assets/images/matcha.jpg")
+Image.create(name: "aliens", url: "https://www.festivalclaca.cat/imgfv/b/18-182681_jessicamaccormackrmack-transparent-background-smoke-fire-png.png")
+
+
+
+user = User.create(username: "Rocky", image_id: 1)
+
+post = Post.create(content: "First Post for VaporWeb '98", user_id: user.id)
