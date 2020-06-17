@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         user = User.new(username: params[:username], image_id: 1)
         if user.valid?
             user.save
-            render json: user
+            render json: user, include: :image
         else
             render json: {
                 message: user.errors.messages
