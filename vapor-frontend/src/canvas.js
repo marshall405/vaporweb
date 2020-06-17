@@ -3,18 +3,18 @@
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
 
-
-
 const square = {
     x: 0,
     y: 0,
     w: 30,
     h: 30,
+    speed: 5,
     draw: function () {
         ctx.fillRect(this.x, this.y, this.w, this.h)
     }
 }
 canvas.addEventListener("focus", addKeydownEvent)
+canvas.focus()
 canvas.addEventListener('blur', () => canvas.removeEventListener("keydown", keydownEvent))
 function addKeydownEvent() {
     canvas.addEventListener('keydown', keydownEvent)
@@ -23,19 +23,27 @@ function keydownEvent(e) {
     switch (e.key) {
         case ("ArrowRight"):
             e.preventDefault();
-            square.x += 5;
+            if (square.x + square.w + square.speed <= canvas.width) {
+                square.x += square.speed;
+            }
             break;
         case "ArrowLeft":
             e.preventDefault();
-            square.x -= 5;
+            if (square.x - square.speed >= 0) {
+                square.x -= square.speed;
+            }
             break;
         case "ArrowUp":
             e.preventDefault();
-            square.y -= 5;
+            if (square.y - square.speed >= 0) {
+                square.y -= square.speed;
+            }
             break;
         case "ArrowDown":
             e.preventDefault();
-            square.y += 5;
+            if (square.y + square.h + square.speed <= canvas.height) {
+                square.y += square.speed;
+            }
             break;
         case " ":
             e.preventDefault();
@@ -64,6 +72,7 @@ function colorChange() {
 }
 function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
+    canvas.focus()
 }
 
 canvas.addEventListener('click', e => {
@@ -71,16 +80,26 @@ canvas.addEventListener('click', e => {
     square.y = e.offsetY;
 })
 
-document.getElementById('slider').oninput = function () {
+freqSlider.oninput = function () {
     const adjustedValue = this.value * 1.98;
     this.style.background = 'linear-gradient(to right, indigo 0%, purple ' + adjustedValue + '%, violet ' + this.value + '%, skyblue 100%)'
 };
 
-slider.addEventListener('change', e => {
+freqSlider.addEventListener('change', e => {
     frequency = parseInt(e.target.value);
     count = 0;
+    canvas.focus()
 })
 
+speedSlider.oninput = function () {
+    const adjustedValue = this.value * 1.98;
+    this.style.background = 'linear-gradient(to right, indigo 0%, purple ' + adjustedValue + '%, violet ' + this.value + '%, skyblue 100%)'
+};
+
+speedSlider.addEventListener('change', e => {
+    square.speed = parseInt(e.target.value)
+    canvas.focus()
+})
 
 drawSquare()
 

@@ -53,16 +53,25 @@
     <div class="canvas-container">
         <canvas width=500 height=500 tabindex="1"></canvas>
         <br>
-        <div id="canvasContols">
-            <input type="button" value="clear canvas" id="clearCanvas">
-            <input id="slider" type="range" min="1" max="50" value="1">
+        <div id="canvasContols" class="controls-container">
+            <input type="button" value="clear canvas" id="clearCanvas" class="clear button">
+            <div class="slider-container">
+                <div class='control'>
+                    <label for="freqSlider">color frequency</label>
+                    <input id="freqSlider" class="slider" type="range" min="1" max="50" value="1">
+                </div>
+                <div class='control'>
+                    <label for="speedSlider">speed</label>
+                    <input id="speedSlider" class="slider" type="range" min="1" max="50" value="5">
+                </div>
+            </div>
         </div>
     </div>
 
     <header>
         <h2 class='posts-header'>🔥 Vapor Posts 🔥</h2>
     </header>
-    <form id="addPost" class="new-post-container">
+    <form id="addPost" class="new-post-container ">
         <textarea id="content" class='post-text' placeholder="lit post" maxlength="250"></textarea>
 
         <p id="chars" class="show-chars">characters remaining</p>
