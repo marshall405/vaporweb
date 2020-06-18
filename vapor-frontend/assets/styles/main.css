@@ -152,11 +152,21 @@ header {
 
 /* AUDIO */
 
-#audio {
+.audio-container {
     width: 300px;
     background: rgba(163, 29, 235, 0.4);
     text-align: center;
-    top: 0;
-    right: 0;
     color: #cb9ed8;
+    margin: 0 auto;
+    padding: 2px;
+}
+
+.audio-container button {
+    margin: 0px;
+}
+
+#songInfo {
+    color: greenyellow;
+    margin: 0px;
+    background: rgb(49,0,65);
 }

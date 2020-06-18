@@ -7,26 +7,38 @@ fetch(songsURL)
     .then(json => {
         songs = json
     })
-selectSong.addEventListener('click', changeSong)
+next.addEventListener('click', nextSong)
 
-function changeSong(e) {
+function nextSong(e) {
     songIndex += 1
     if (songIndex >= songs.length) {
         songIndex = 0
     }
-    newSong = songs[songIndex]
-    song.src = `${newSong.url}`
-    songInfo.innerText = `${newSong.name} by: ${newSong.artist}`
+    setSong(songs[songIndex])
+}
+
+back.addEventListener('click', backSong)
+
+function backSong() {
+    songIndex -= 1
+    if (songIndex < 0) {
+        songIndex = songs.length - 1
+    }
+    setSong(songs[songIndex])
+}
+function setSong(song) {
+    audio.src = `${song.url}`
+    songInfo.innerText = `${song.name} by: ${song.artist}`
 }
 
 play.addEventListener('click', songControls)
 
 function songControls(e) {
     if (play.value === "pause") {
-        song.pause()
+        audio.pause()
         play.value = "play"
     } else {
-        song.play()
+        audio.play()
         play.value = "pause"
     }
 }
