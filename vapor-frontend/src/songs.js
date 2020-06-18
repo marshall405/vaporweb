@@ -12,3 +12,15 @@ function changeSong(e) {
     song.src = `assets/audio/${songs[songIndex]}`
 
 }
+
+play.addEventListener('click', songControls)
+
+function songControls(e) {
+    if (play.value === "pause") {
+        song.pause()
+        play.value = "play"
+    } else {
+        song.play()
+        play.value = "pause"
+    }
+}

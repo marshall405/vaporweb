@@ -38,10 +38,11 @@
         </div>
         <input type="button" id="login" value="login">
     </header>
-    <audio id="song" controls autoplay loop src="assets/audio/sail.mp3">
-    </audio>
-    <input type="button" id="selectSong" value="change song">
-
+    <div id="audio">
+        <audio id="song" autoplay loop src="assets/audio/sail.mp3"></audio>
+        <input type="button" id="play" value="pause">
+        <input type="button" id="selectSong" value="change song">
+    </div>
     <form id="login-form" class="form">
         <div>
             <input type="text" placeholder="username" name="username">
