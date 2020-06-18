@@ -65,7 +65,7 @@ function welcomeUser(user) {
 
     const h2 = document.createElement('h2');
     h2.id = "welcome";
-    h2.innerText = `Welcome to the future past, ${user.username}.`;
+    h2.innerText = `Welcome to the future past,\n ${user.username}.`;
 
 
     const imgDiv = document.createElement('div')

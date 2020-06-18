@@ -11,7 +11,6 @@ html {
 
 
 .hero-image {
-    position: relative;
     padding: 20px;
     border: 10px ridge indigo;
     background: rgba(163, 29, 235, 0.4);
@@ -20,10 +19,7 @@ html {
     background-size: 4px 4px;
 }
 
-#innerHeroImage {
-    display: flex;
-    align-items: center;
-}
+
 .profile-pic {
     padding: 10px;
     margin-right: 20px;
@@ -32,11 +28,16 @@ html {
 #welcome {
     /* width: 100%; */
     text-align: center;
-
+    position: relative;
     /* background: rgb(49,0,65); */
     /* background: linear-gradient(180deg, rgba(49,0,65,1) 5%, rgba(75,9,121,1) 40%, rgba(144, 8, 172, 0.715) 85%); */
 }
 
+.profile-container button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 
 .page-head {
     text-align: center;
@@ -70,6 +71,7 @@ h1 {
 }
 
 .profile-container {
+    position: relative;
     color: greenyellow;
     padding: 10px;
     background: rgb(49,0,65);
@@ -171,10 +173,13 @@ header {
     background: rgba(163, 29, 235, 0.4);
     text-align: center;
     color: #cb9ed8;
-    margin: 0 auto;
     padding: 2px;
+    margin: 0;
 }
 
+.controls {
+    margin: 15px;
+}
 .audio-container button {
     margin: 0px;
 }
@@ -183,4 +188,12 @@ header {
     color: greenyellow;
     margin: 0px;
     background: rgb(49,0,65);
+}
+
+
+#innerHeroImage {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
