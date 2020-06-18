@@ -153,8 +153,10 @@ header {
 /* AUDIO */
 
 #audio {
+    width: 300px;
+    background: rgba(163, 29, 235, 0.4);
     text-align: center;
     top: 0;
     right: 0;
-    background: #ca36f2;
+    color: #cb9ed8;
 }
