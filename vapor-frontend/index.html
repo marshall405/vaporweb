@@ -23,6 +23,7 @@
     <script src="src/canvas.js" defer></script>
     <script src="src/posts.js" defer></script>
     <script src="src/createUser.js" defer></script>
+    <script src="src/songs.js" defer></script>
 </head>
 
 <body>
@@ -37,9 +38,10 @@
         </div>
         <input type="button" id="login" value="login">
     </header>
-    <audio controls autoplay loop>
-        <source src="assets/audio/sail.mp3" type="audio/mpeg">
+    <audio id="song" controls autoplay loop src="assets/audio/sail.mp3">
     </audio>
+    <input type="button" id="selectSong" value="change song">
+
     <form id="login-form" class="form">
         <div>
             <input type="text" placeholder="username" name="username">
