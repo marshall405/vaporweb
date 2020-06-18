@@ -68,16 +68,17 @@ function welcomeUser(user) {
     h2.innerText = `Welcome to the future past,\n ${user.username}.`;
 
 
-    const imgDiv = document.createElement('div')
-    const img = document.createElement('img')
-    const p = document.createElement('p')
-    p.innerText = "click to select new image"
-    imgDiv.classList.add('canvas-pic')
-    img.src = user.image.url
-    img.addEventListener('click', handleImageClick)
-    imgDiv.appendChild(img)
-    imgDiv.appendChild(p)
-    document.body.appendChild(imgDiv)
+    // const imgDiv = document.createElement('div')
+    // const img = document.createElement('img')
+    // const p = document.createElement('p')
+    // p.innerText = "click to select new image"
+    // imgDiv.classList.add('canvas-pic')
+    // img.src = user.image.url
+    // canvasImg.src = user.image.url
+    canvasImg.addEventListener('click', handleImageClick)
+    // imgDiv.appendChild(img)
+    // imgDiv.appendChild(p)
+
 
     canvas.style.backgroundImage = `url(${user.image.url})`
     logoutButton.innerText = 'logout';
@@ -85,6 +86,7 @@ function welcomeUser(user) {
 
     profileDiv.appendChild(h2);
     profileDiv.appendChild(logoutButton);
+
     heroDiv.appendChild(profileDiv)
 
     loginForm.style.display = "none";
@@ -94,6 +96,7 @@ function welcomeUser(user) {
 
 function handleLogout(e) {
     heroDiv.removeChild(profileDiv);
+
     canvas.style.backgroundImage = "url(https://www.festivalclaca.cat/imgfv/b/18-182681_jessicamaccormackrmack-transparent-background-smoke-fire-png.png)"
     sessionStorage.removeItem('user_id')
     sessionStorage.removeItem('username')
