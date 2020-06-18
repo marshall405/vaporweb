@@ -29,6 +29,7 @@ function backSong() {
 function setSong(song) {
     audio.src = `${song.url}`
     songInfo.innerText = `${song.name} by: ${song.artist}`
+    play.value = "play"
 }
 
 play.addEventListener('click', songControls)
