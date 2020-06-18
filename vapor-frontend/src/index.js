@@ -58,7 +58,7 @@ let heroDiv;
 function welcomeUser(user) {
     sessionStorage.setItem('user_id', user.id)
     sessionStorage.setItem('username', user.username)
-    heroDiv = document.getElementById('heroImage')
+    heroDiv = document.getElementById('innerHeroImage')
     profileDiv = document.createElement('div')
     profileDiv.classList.add('profile-container')
     aLogin.style.display = 'none'

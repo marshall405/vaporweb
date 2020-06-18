@@ -30,24 +30,22 @@
     <header>
         <div class="hero-image" id="heroImage">
             <h1 class='page-head'>⽕ VaporWeb '98 ⽕</h1>
-            <nav>
-                <ul>
+            <div id="innerHeroImage">
+                <div class=" audio-container posts-header">
+                    <h3 id="songInfo"> Sail by: Awolnation</h3>
+                    <audio id="audio" loop src="assets/audio/sail.mp3"></audio>
 
-                </ul>
-            </nav>
+                    <input type="button" id="back" value="<<">
+                    <input type="button" id="play" value="play">
+                    <input type="button" id="next" value=">>">
+                    <label for="volume">volume</label>
+                    <input id="volume" class="slider" type="range" min="0.0" max="10" value="3">
+                </div>
+            </div>
         </div>
         <input type="button" id="login" value="login">
     </header>
-    <div class="audio-container posts-header">
-        <h3 id="songInfo"> Sail by: Awolnation</h3>
-        <audio id="audio" loop src="assets/audio/sail.mp3"></audio>
 
-        <input type="button" id="back" value="<<">
-        <input type="button" id="play" value="play">
-        <input type="button" id="next" value=">>">
-        <label for="volume">volume</label>
-        <input id="volume" class="slider" type="range" min="0.0" max="10" value="3">
-    </div>
     <form id="login-form" class="form">
         <div>
             <input type="text" placeholder="username" name="username">
