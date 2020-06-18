@@ -11,7 +11,7 @@ if (sessionStorage.getItem('username')) {
 //  LOGIN 
 const login = document.getElementById('login');
 login.addEventListener('click', showLoginForm);
-
+aLogin.addEventListener('click', showLoginForm)
 function showLoginForm(e) {
     loginForm.style.display = "flex"
 }
@@ -61,7 +61,7 @@ function welcomeUser(user) {
     heroDiv = document.getElementById('heroImage')
     profileDiv = document.createElement('div')
     profileDiv.classList.add('profile-container')
-
+    aLogin.style.display = 'none'
 
     const h2 = document.createElement('h2');
     h2.id = "welcome";
@@ -93,6 +93,7 @@ function handleLogout(e) {
     sessionStorage.removeItem('username')
     document.getElementById('post-submit').disabled = true;
     login.style.display = 'initial';
+    aLogin.style.display = 'inline'
 }
 
 
