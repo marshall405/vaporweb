@@ -43,3 +43,9 @@ function songControls(e) {
         play.value = "pause"
     }
 }
+
+volume.addEventListener('input', adjustVolume)
+
+function adjustVolume() {
+    audio.volume = volume.value / 10
+}
