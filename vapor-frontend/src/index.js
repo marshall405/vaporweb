@@ -61,7 +61,7 @@ function welcomeUser(user) {
     heroDiv = document.getElementById('heroImage')
     profileDiv = document.createElement('div')
     profileDiv.classList.add('profile-container')
-    
+
 
     const h2 = document.createElement('h2');
     h2.id = "welcome";
@@ -88,6 +88,7 @@ function welcomeUser(user) {
 
 function handleLogout(e) {
     heroDiv.removeChild(profileDiv);
+    canvas.style.backgroundImage = "url(https://www.festivalclaca.cat/imgfv/b/18-182681_jessicamaccormackrmack-transparent-background-smoke-fire-png.png)"
     sessionStorage.removeItem('user_id')
     sessionStorage.removeItem('username')
     document.getElementById('post-submit').disabled = true;
