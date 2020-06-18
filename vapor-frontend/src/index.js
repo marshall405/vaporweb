@@ -74,7 +74,7 @@ function welcomeUser(user) {
     // p.innerText = "click to select new image"
     // imgDiv.classList.add('canvas-pic')
     // img.src = user.image.url
-    // canvasImg.src = user.image.url
+    canvasImg.src = user.image.url
     canvasImg.addEventListener('click', handleImageClick)
     // imgDiv.appendChild(img)
     // imgDiv.appendChild(p)
@@ -96,7 +96,7 @@ function welcomeUser(user) {
 
 function handleLogout(e) {
     heroDiv.removeChild(profileDiv);
-
+    canvasImg.src = "https://www.festivalclaca.cat/imgfv/b/18-182681_jessicamaccormackrmack-transparent-background-smoke-fire-png.png"
     canvas.style.backgroundImage = "url(https://www.festivalclaca.cat/imgfv/b/18-182681_jessicamaccormackrmack-transparent-background-smoke-fire-png.png)"
     sessionStorage.removeItem('user_id')
     sessionStorage.removeItem('username')
