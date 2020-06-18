@@ -9,8 +9,23 @@ html {
     font-family: 'VT323', monospace;
 }
 
+.hero-image {
+    padding: 20px;
+    border: 10px ridge indigo;
+    background: rgba(163, 29, 235, 0.4);
+    /* background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(54,204,229,0.7973564425770308) 59%, rgba(0,2,212,0.6376925770308124) 95%); */
+    background-image: url('https://i.imgur.com/P5MBjQr.gif?1');
+    background-size: 4px 4px;
+}
+
+
+.profile-pic {
+    padding: 10px;
+    margin-right: 20px;
+}
+
 #welcome {
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
 
     /* background: rgb(49,0,65); */
@@ -56,6 +71,7 @@ h1 {
     background: radial-gradient(circle, rgba(49,0,65,1) 5%, rgba(75,9,121,1) 40%, rgba(255,0,249,0.7147233893557423) 85%);
     border: 10px ridge hotpink;
     box-shadow: 1px 1px 10px 5px indigo;
+    max-width: fit-content;
 }
 
 
@@ -149,6 +165,7 @@ header {
     padding: 0;
     overflow-y: scroll;
 }
+
 .display-img {
     width: 200px;
     height: 200px;

@@ -51,12 +51,16 @@ function fetchUser(username) {
 }
 
 const logoutButton = document.createElement("button");
+
 let profileDiv;
+
 function welcomeUser(user) {
     sessionStorage.setItem('user_id', user.id)
     sessionStorage.setItem('username', user.username)
+    const heroDiv = document.getElementById('heroImage')
     profileDiv = document.createElement('div')
     profileDiv.classList.add('profile-container')
+    
 
     const h2 = document.createElement('h2');
     h2.id = "welcome";
@@ -74,7 +78,7 @@ function welcomeUser(user) {
     profileDiv.appendChild(img);
     profileDiv.appendChild(h2);
     profileDiv.appendChild(logoutButton);
-    document.querySelector('header').appendChild(profileDiv)
+    heroDiv.appendChild(profileDiv)
 
     loginForm.style.display = "none";
     document.getElementById('post-submit').disabled = false;

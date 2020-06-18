@@ -13,6 +13,8 @@ Image.create(name: "cameron", url: "http://localhost:3001/assets/images/cam.jpg"
 Image.create(name: "marshall", url: "http://localhost:3001/assets/images/mar.jpg")
 Image.create(name: "matcha", url: "http://localhost:3001/assets/images/matcha.jpg")
 Image.create(name: "aliens", url: "https://www.festivalclaca.cat/imgfv/b/18-182681_jessicamaccormackrmack-transparent-background-smoke-fire-png.png")
+Image.create(name: "computers", url: "http://localhost:3001/assets/images/russian_computers.jpg")
+Image.create(name: "pier", url: "http://localhost:3001/assets/images/vapor_pier.png")
 
 
 
