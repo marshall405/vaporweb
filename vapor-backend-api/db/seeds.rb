@@ -16,7 +16,8 @@ Image.create(name: "aliens", url: "https://www.festivalclaca.cat/imgfv/b/18-1826
 Image.create(name: "computers", url: "http://localhost:3001/assets/images/russian_computers.jpg")
 Image.create(name: "pier", url: "http://localhost:3001/assets/images/vapor_pier.png")
 
-
+Song.create(url: "http://localhost:3001/assets/audio/sail.mp3", artist: "Awolnation", name: "Sail")
+Song.create(url: "http://localhost:3001/assets/audio/killyourheros.mp3", artist: "Awolnation", name: "Kill Your Heros")
 
 user = User.create(username: "Rocky", image_id: 1)
 

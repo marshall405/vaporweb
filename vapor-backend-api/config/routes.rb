@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :songs, only: :index
+
   resources :images
   
   patch 'users/image', to: 'users#image'

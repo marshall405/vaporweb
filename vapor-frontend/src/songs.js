@@ -1,7 +1,12 @@
-const songs = ["sail.mp3", "killyourheros.mp3"];
+const songsURL = "http://localhost:3000/songs"
+let songs;
 let songIndex = 0
 
-
+fetch(songsURL)
+    .then(res => res.json())
+    .then(json => {
+        songs = json
+    })
 selectSong.addEventListener('click', changeSong)
 
 function changeSong(e) {
@@ -9,8 +14,9 @@ function changeSong(e) {
     if (songIndex >= songs.length) {
         songIndex = 0
     }
-    song.src = `assets/audio/${songs[songIndex]}`
-
+    newSong = songs[songIndex]
+    song.src = `${newSong.url}`
+    songInfo.innerText = `${newSong.name} by: ${newSong.artist}`
 }
 
 play.addEventListener('click', songControls)

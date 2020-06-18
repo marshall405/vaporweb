@@ -153,7 +153,7 @@ header {
 /* AUDIO */
 
 #audio {
-    position: fixed;
+    text-align: center;
     top: 0;
     right: 0;
     background: #ca36f2;
