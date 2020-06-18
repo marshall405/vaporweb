@@ -67,16 +67,22 @@ function welcomeUser(user) {
     h2.id = "welcome";
     h2.innerText = `Welcome to the future past, ${user.username}.`;
 
-    const img = document.createElement('img')
-    img.classList.add('profile-pic')
-    img.src = user.image.url
-    canvas.style.backgroundImage = `url(${user.image.url})`
-    img.addEventListener('click', handleImageClick)
 
+    const imgDiv = document.createElement('div')
+    const img = document.createElement('img')
+    const p = document.createElement('p')
+    p.innerText = "click to select new image"
+    imgDiv.classList.add('canvas-pic')
+    img.src = user.image.url
+    img.addEventListener('click', handleImageClick)
+    imgDiv.appendChild(img)
+    imgDiv.appendChild(p)
+    document.body.appendChild(imgDiv)
+
+    canvas.style.backgroundImage = `url(${user.image.url})`
     logoutButton.innerText = 'logout';
     logoutButton.addEventListener('click', handleLogout);
 
-    profileDiv.appendChild(img);
     profileDiv.appendChild(h2);
     profileDiv.appendChild(logoutButton);
     heroDiv.appendChild(profileDiv)
