@@ -9,6 +9,11 @@ html {
     font-family: 'VT323', monospace;
 }
 
+audio {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
 .hero-image {
     padding: 20px;
     border: 10px ridge indigo;
