@@ -45,7 +45,7 @@ function updateUserImage(id) {
     })
         .then(res => res.json())
         .then(json => {
-            document.querySelector('.profile-pic').src = json.image.url
+            document.querySelector('.canvas-pic img').src = json.image.url
             canvas.style.backgroundImage = `url(${json.image.url})`
 
             showImages.style.display = 'none'
