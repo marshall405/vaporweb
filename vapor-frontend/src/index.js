@@ -53,11 +53,12 @@ function fetchUser(username) {
 const logoutButton = document.createElement("button");
 
 let profileDiv;
+let heroDiv;
 
 function welcomeUser(user) {
     sessionStorage.setItem('user_id', user.id)
     sessionStorage.setItem('username', user.username)
-    const heroDiv = document.getElementById('heroImage')
+    heroDiv = document.getElementById('heroImage')
     profileDiv = document.createElement('div')
     profileDiv.classList.add('profile-container')
     
@@ -86,7 +87,7 @@ function welcomeUser(user) {
 
 
 function handleLogout(e) {
-    document.querySelector('header').removeChild(profileDiv);
+    heroDiv.removeChild(profileDiv);
     sessionStorage.removeItem('user_id')
     sessionStorage.removeItem('username')
     document.getElementById('post-submit').disabled = true;
