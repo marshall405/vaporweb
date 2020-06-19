@@ -23,27 +23,31 @@ function keydownEvent(e) {
     switch (e.key) {
         case ("ArrowRight"):
             e.preventDefault();
-            if (square.x + square.w + square.speed <= canvas.width) {
-                square.x += square.speed;
+            if (square.x > canvas.width) {
+                square.x = -square.w
             }
+            square.x += square.speed
             break;
         case "ArrowLeft":
             e.preventDefault();
-            if (square.x - square.speed >= 0) {
-                square.x -= square.speed;
+            if (square.x + square.w < 0) {
+                square.x = canvas.width
             }
+            square.x -= square.speed;
             break;
         case "ArrowUp":
             e.preventDefault();
-            if (square.y - square.speed >= 0) {
-                square.y -= square.speed;
+            if (square.y < 0) {
+                square.y = canvas.height
             }
+            square.y -= square.speed;
             break;
         case "ArrowDown":
             e.preventDefault();
-            if (square.y + square.h + square.speed <= canvas.height) {
-                square.y += square.speed;
+            if (square.y > canvas.height) {
+                square.y = -square.h
             }
+            square.y += square.speed;
             break;
         case " ":
             e.preventDefault();
