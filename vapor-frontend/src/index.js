@@ -6,6 +6,7 @@ let user_id;
 if (sessionStorage.getItem('username')) {
     fetchUser(sessionStorage.getItem('username'))
 }
+canvasImg.addEventListener('click', handleImageClick)
 
 
 //  LOGIN 
@@ -75,7 +76,6 @@ function welcomeUser(user) {
     // imgDiv.classList.add('canvas-pic')
     // img.src = user.image.url
     canvasImg.src = user.image.url
-    canvasImg.addEventListener('click', handleImageClick)
     // imgDiv.appendChild(img)
     // imgDiv.appendChild(p)
 

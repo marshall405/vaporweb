@@ -18,6 +18,7 @@ Image.create(name: "pier", url: "http://localhost:3001/assets/images/vapor_pier.
 
 Song.create(url: "http://localhost:3001/assets/audio/sail.mp3", artist: "Awolnation", name: "Sail")
 Song.create(url: "http://localhost:3001/assets/audio/killyourheros.mp3", artist: "Awolnation", name: "Kill Your Heros")
+Song.create(url: "http://localhost:3001/assets/audio/baller.mp3", artist: "Lil' Troy", name: "Wanna be a baller")
 
 user = User.create(username: "Rocky", image_id: 1)
 
