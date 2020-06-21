@@ -148,7 +148,7 @@ header {
 }
 
 .canvas-pic p {
-    margin: 0;
+    margin: 4px 0px 0px 0px;
     text-align: center;
 }
 .canvas-pic img {
