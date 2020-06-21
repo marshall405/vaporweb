@@ -1,4 +1,4 @@
-const postsURL = "http://localhost:3000/posts"
+const postsURL = "https://vapor-web1.herokuapp.com/posts"
 const forum = document.getElementById('forum')
 
 // max characters for a new post 
