@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VaporWeb '98</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link href="assets/styles/main.css" rel="stylesheet">
+    <link href="assets/styles/login-form.css" rel="stylesheet">
+    <link href="assets/styles/canvas.css" rel="stylesheet">
+    <link href="assets/styles/posts.css" rel="stylesheet">
+    <link href="assets/styles/gallery.css" rel="stylesheet">
+
+    <!-- images.js must be first  -->
+    <script src="src/images.js" defer></script>
+
+    <script src="src/index.js" defer></script>
+    <script src="src/canvas.js" defer></script>
+    <script src="src/posts.js" defer></script>
+    <script src="src/createUser.js" defer></script>
+    <script src="src/songs.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="hero-image" id="heroImage">
+            <h1 class='page-head'>⽕ VaporWeb '98 ⽕</h1>
+            <div id="innerHeroImage">
+                <div class=" audio-container posts-header">
+                    <h3 id="songInfo"> Sail by: Awolnation</h3>
+                    <div class="controls">
+                        <audio id="audio" loop src="assets/audio/sail.mp3"></audio>
+
+                        <input type="button" id="back" value="<<">
+                        <input type="button" id="play" value="play">
+                        <input type="button" id="next" value=">>">
+                        <label for="volume">volume</label>
+                        <input id="volume" class="slider" type="range" min="0.0" max="10" value="3">
+                    </div>
+
+                </div>
+                <div class="canvas-pic">
+                    <img src="https://www.festivalclaca.cat/imgfv/b/18-182681_jessicamaccormackrmack-transparent-background-smoke-fire-png.png"
+                        id="canvasImg">
+                </div>
+            </div>
+        </div>
+        <input type="button" id="login" value="login">
+    </header>
+
+    <form id="login-form" class="form">
+        <div>
+            <input type="text" placeholder="username" name="username">
+            <input type="submit">
+            <input type="button" value="Create User" id="createUser">
+        </div>
+        <input type="button" value="Cancel" id="cancel">
+
+    </form>
+
+
+    <div id="showImages" class="images-container">
+    </div>
+    <div class="canvas-container">
+        <canvas width=500 height=500 tabindex="1"></canvas>
+        <br>
+        <div id="canvasContols" class="controls-container">
+            <input type="button" value="clear canvas" id="clearCanvas" class="clear button">
+            <div class="slider-container">
+                <div class='control'>
+                    <label for="freqSlider">color frequency</label>
+                    <input id="freqSlider" class="slider" type="range" min="1" max="50" value="1">
+                </div>
+                <div class='control'>
+                    <label for="speedSlider">speed</label>
+                    <input id="speedSlider" class="slider" type="range" min="1" max="50" value="5">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h2 class='posts-header'>🔥 Vapor Posts 🔥</h2>
+
+    <form id="addPost" class="new-post-container">
+        <textarea id="content" class='post-text' placeholder="lit post" maxlength="250"></textarea>
+
+        <p id="chars" class="show-chars">characters remaining</p>
+        <br>
+        <input id='post-submit' type="submit" disabled>
+        <input type="button" id="aLogin" value="Login to add post">
+    </form>
+
+
+    <div class='post-show-buttons'>
+        <input id="showAllPosts" type="button" value="all posts">
+        <input id="showUserPosts" type="button" value="your posts">
+    </div>
+    <div id="forum">
+
+    </div>
+</body>
+
+</html>

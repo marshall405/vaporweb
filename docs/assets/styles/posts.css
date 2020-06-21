@@ -1,0 +1,63 @@
+.post-container {
+    border: 10px ridge purple;
+    padding: 10px;
+    color: indigo;
+    background-color: RGBA(31, 209, 219, 0.8);
+    box-shadow: 1px 1px 10px 5px violet;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-text {
+    width: 80%;
+    width: 450px;
+    height: 104px;
+    color: indigo;
+    background-color: RGBA(31, 209, 219, 0.8);
+    border: 8px ridge purple;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 10px 5px violet;
+}
+
+.post-text::placeholder {
+    color: indigo;
+}
+
+#post-submit {
+    margin-bottom: 30px;
+}
+
+
+.new-post-container{
+    z-index: 1;
+    position: relative;
+}
+.show-chars {
+    display: inline-block;
+    position: absolute;
+    left: 300px;
+    bottom: 75px;
+    margin: 0;
+    padding: 0; 
+    text-align: center;
+    color: indigo;
+}
+
+input:disabled {
+    visibility: hidden;
+}
+
+.post-user{
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}
+.post-user .like-button {
+    margin-left: 15px;
+}
+
+.post-show-buttons {
+    text-align: right;
+}
