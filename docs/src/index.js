@@ -1,4 +1,4 @@
-const userURL = 'http://localhost:3000/users';
+const userURL = 'https://vapor-web1.herokuapp.com/users';
 const loginForm = document.getElementById('login-form');
 
 let user_id;

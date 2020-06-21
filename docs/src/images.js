@@ -1,4 +1,4 @@
-const imagesURL = "http://localhost:3000/images"
+const imagesURL = "https://vapor-web1.herokuapp.com/images"
 // const userURL = "http://localhost:3000/users"
 function handleImageClick(e) {
     fetch(imagesURL)
