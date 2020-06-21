@@ -20,7 +20,7 @@ Image.create(name: "alone and it's raining", url: "http://localhost:3001/assets/
 Image.create(name: "dog?", url: "http://localhost:3001/assets/images/dog.jpg")
 Image.create(name: "gameboy", url: "http://localhost:3001/assets/images/gameboy.png")
 
-
+Song.create(url: "http://localhost:3001/assets/audio/Vapor93.mp3", artist: "90's BB", name: "Vapor93")
 Song.create(url: "http://localhost:3001/assets/audio/sail.mp3", artist: "Awolnation", name: "Sail")
 Song.create(url: "http://localhost:3001/assets/audio/killyourheros.mp3", artist: "Awolnation", name: "Kill Your Heros")
 Song.create(url: "http://localhost:3001/assets/audio/baller.mp3", artist: "Lil' Troy", name: "Wanna be a baller")
