@@ -21,8 +21,7 @@ Image.create(name: "dog?", url: "assets/images/dog.jpg")
 Image.create(name: "gameboy", url: "assets/images/gameboy.png")
 
 Song.create(url: "assets/audio/Vapor93.mp3", artist: "90's BB", name: "Vapor93")
-Song.create(url: "assets/audio/sail.mp3", artist: "Awolnation", name: "Sail")
-Song.create(url: "assets/audio/killyourheros.mp3", artist: "Awolnation", name: "Kill Your Heros")
+Song.create(url: "assets/audio/Vapor93.mp3", artist: "90's BB", name: "AFK")
 Song.create(url: "assets/audio/baller.mp3", artist: "Lil' Troy", name: "Wanna be a baller")
 
 user = User.create(username: "Rocky", image_id: 7)
